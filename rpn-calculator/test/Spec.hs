@@ -10,7 +10,7 @@ import RPN (BinaryOperator, parseBinaryOperator, applyBinaryOperator, evaluate)
 
 
 main :: IO ()
-main = hspecWith defaultConfig {configFastFail = False} specs
+main = hspecWith defaultConfig {configFastFail = True} specs
 
 specs :: Spec
 specs = do
