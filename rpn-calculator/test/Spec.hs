@@ -68,12 +68,10 @@ specs = do
 
     -- TODO: Test for nice error messages by using the following tests
     -- or creating your own error datatype!
-    {-
     it "gives nice error messages" $ do
       evaluate "3 2 #" `shouldBe` Left "invalid token: \"#\""
       evaluate "3 2+" `shouldBe` Left "invalid token: \"2+\""
-      evaluate "*" `shouldBe` Left "not enough arguments for operator '*'"
-      evaluate "1 2 * +" `shouldBe` Left "not enough arguments for operator \"+\""
-      evaluate "100 34" `shouldBe` Left "more than one value left: [34, 100]"
-      evaluate "1 2 -3 +" `shouldBe` Left "more than one value left: [-1, 1]"
-    -}
+      evaluate "*" `shouldBe` Left "not enough values on stack for operator"
+      evaluate "1 2 * +" `shouldBe` Left "not enough values on stack for operator"
+      evaluate "100 34" `shouldBe` Left "more than one value left on stack: [34,100]"
+      evaluate "1 2 -3 +" `shouldBe` Left "more than one value left on stack: [-1,1]"
